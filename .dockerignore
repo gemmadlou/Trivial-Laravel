@@ -1,0 +1,27 @@
+# Ignore everything
+**
+
+# Allow files and directories
+!/docker/**
+!/docs/**
+
+!/app/**
+!/bootstrap/**
+!/config/**
+!/database/**
+!/public/**
+!/resources/**
+!/routes/**
+!/artisan
+!/composer.json
+!/composer.lock
+!/entrypoint.sh
+!/package.json
+!/server.php
+!/webpack.mix.js
+!/yarn.lock
+
+/bootstrap/cache/config.php
+/bootstrap/cache/packages.php
+/bootstrap/cache/routes-v7.php
+/bootstrap/cache/services.php
