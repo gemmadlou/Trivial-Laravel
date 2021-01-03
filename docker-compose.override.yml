@@ -1,0 +1,11 @@
+# For more information: https://laravel.com/docs/sail
+version: "3"
+services:
+  app:
+    build:
+      target: development
+    volumes:
+      - ".:/var/www"
+  webserver:
+    volumes:
+      - ./:/var/www

@@ -13,11 +13,11 @@ function Permission {
   mkdir -p storage/framework/testing
   mkdir -p storage/framework/views
   chown -R 1000:1000 storage
-  chmod -R 0777 storage
+  chmod -R 0775 storage
 
   mkdir -p bootstrap/cache/data
   chown -R 1000:1000 bootstrap/cache
-  chmod -R 0777 bootstrap/cache
+  chmod -R 0775 bootstrap/cache
 }
 
 function Decache {
