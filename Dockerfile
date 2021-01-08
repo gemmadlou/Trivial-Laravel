@@ -30,14 +30,27 @@ ENTRYPOINT [ "sh", "/var/www/entrypoint.sh" ]
 CMD [ "server" ]
 
 #------------------------------------------
-FROM development AS production
+FROM development AS test
 #------------------------------------------
+
 
 COPY . /var/www
 
 RUN yarn install --frozen-lockfile \
     && yarn prod \
     && rm -rf node_modules
+
+RUN composer install
+
+RUN php artisan test
+
+#------------------------------------------
+FROM development AS production
+#------------------------------------------
+
+COPY --from=test /var/www /var/www
+
+RUN rm -rf /var/www/vendor
 
 RUN composer install --no-dev \
     --ignore-platform-reqs \
